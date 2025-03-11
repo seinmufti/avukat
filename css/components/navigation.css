@@ -1,0 +1,23 @@
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
