@@ -101,16 +101,50 @@ section {
 
 .about-content {
     display: flex;
-    align-items: flex-start;
-    /* Changed from center to flex-start */
-    justify-content: space-between;
+    flex-direction: column;
     gap: 2rem;
     padding: 2rem;
 }
 
 .about-text {
-    align-self: flex-start;
-    /* Added to ensure text starts from top */
+    width: 100%;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Desktop layout */
+@media screen and (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .about-text {
+        flex: 1;
+        margin-left: 2rem;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+}
+
+.image-frame {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .practice-grid {
