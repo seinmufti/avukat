@@ -1,12 +1,15 @@
 @media screen and (max-width: 768px) {
     .nav-links {
         display: none;
+        flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0;
         right: 0;
-        background: var(--primary-color);
-        padding: 1rem;
+        background: #333;
+        /* Changed from #fff to match header */
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     .nav-links.active {
@@ -16,7 +19,18 @@
     }
 
     .nav-links a {
-        margin: 0.5rem 0;
+        margin: 10px 0;
+        color: #ecf0f1;
+        /* Added to ensure links are visible */
+    }
+
+    .lang-toggle {
+        margin: 10px 0 0 0;
+        text-align: center;
+        border-color: #ecf0f1;
+        /* Updated border color */
+        color: #ecf0f1;
+        /* Updated text color */
     }
 
     .menu-toggle {

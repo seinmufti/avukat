@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -17,10 +17,14 @@
                 <img src="images/logo.png" alt="ADV Muhamad Logo" style="height: 50px;">
             </div>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#practice">Practice Areas</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" data-translate="home">Home</a>
+                <a href="#about" data-translate="about">About</a>
+                <a href="#practice" data-translate="practice">Practice Areas</a>
+                <a href="#contact" data-translate="contact">Contact</a>
+                <a href="#" class="lang-toggle" id="langToggle">
+                    <i class="fas fa-globe"></i>
+                    <span data-translate="lang">عربي</span>
+                </a>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -31,10 +35,10 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Muhammad Saadallah</h1>
-                <h2>Lawyer</h2>
-                <p>Experience, trust, fairness, commitment.</p>
-                <a href="#contact" class="cta-button">Schedule Consultation</a>
+                <h1 data-translate="name">Muhammad Saadallah</h1>
+                <h2 data-translate="lawyer">Lawyer</h2>
+                <p data-translate="motto">Experience, trust, fairness, commitment.</p>
+                <a href="#contact" class="cta-button" data-translate="schedule">Schedule Consultation</a>
             </div>
             <div class="hero-overlay"></div>
         </section>
@@ -47,60 +51,55 @@
                     </div>
                 </div>
                 <div class="about-text">
-                    <h2>About Me</h2>
+                    <h2 data-translate="aboutMe">About Me</h2>
                     <!-- Spacer -->
                     <div style="height: 15px;"></div>
-                    <p>We provide comprehensive legal services characterized by expertise and professionalism. We are
+                    <p data-translate="aboutText">We provide comprehensive legal services characterized by expertise and
+                        professionalism. We are
                         committed to protecting our clients' rights and providing accurate advice in various legal
                         fields. We strive to achieve justice through effective and innovative legal solutions</p>
-                    <!-- <div class="experience-highlights">
-                        <div class="highlight">
-                            <span class="number">15+</span>
-                            <span class="label">Years Experience</span>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
 
         <section id="practice" class="practice-areas">
-            <h2>Practice Areas</h2>
+            <h2 data-translate="practiceAreas">Practice Areas</h2>
             <div class="practice-grid">
                 <div class="practice-card">
                     <i class="fas fa-building"></i>
-                    <h3>Corporate Law</h3>
+                    <h3 data-translate="corporate">Corporate Law</h3>
                 </div>
                 <div class="practice-card">
                     <i class="fas fa-gavel"></i>
-                    <h3>Civil Litigation</h3>
+                    <h3 data-translate="civil">Civil Litigation</h3>
                 </div>
                 <div class="practice-card">
                     <i class="fas fa-home"></i>
-                    <h3>Real Estate Law</h3>
+                    <h3 data-translate="real">Real Estate Law</h3>
                 </div>
                 <div class="practice-card">
                     <i class="fas fa-balance-scale"></i>
-                    <h3>Family Law</h3>
+                    <h3 data-translate="family">Family Law</h3>
                 </div>
                 <div class="practice-card">
                     <i class="fas fa-user-shield"></i>
-                    <h3>Criminal Law</h3>
+                    <h3 data-translate="criminal">Criminal Law</h3>
                 </div>
                 <div class="practice-card">
                     <i class="fas fa-briefcase"></i>
-                    <h3>Labor Law</h3>
+                    <h3 data-translate="labor">Labor Law</h3>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Contact</h2>
+            <h2 data-translate="contactTitle">Contact</h2>
             <div class="contact-container">
                 <form id="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="tel" placeholder="Phone">
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <input type="text" data-translate-placeholder="name" placeholder="Name" required>
+                    <input type="tel" data-translate-placeholder="phone" placeholder="Phone">
+                    <textarea data-translate-placeholder="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" data-translate="send">Send Message</button>
                 </form>
             </div>
         </section>
@@ -109,9 +108,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <p>Muhammad Saadallah - Lawyer</p>
-                <p>40m, Gullan Towers</p>
-                <p>Erbil, ERB 44001</p>
+                <p data-translate="footerTitle">Muhammad Saadallah - Lawyer</p>
+                <p data-translate="address">40m, Gullan Towers</p>
+                <p data-translate="location">Erbil, ERB 44001</p>
             </div>
             <div class="footer-social">
                 <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -120,6 +119,7 @@
         </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 
