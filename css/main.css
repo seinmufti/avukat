@@ -118,6 +118,21 @@ section {
     padding: 5rem 10%;
 }
 
+/* Remove or comment out the general section h2 rule */
+/* section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+} */
+
+/* Update selectors to include variations of Practice Areas section ID */
+#practice-areas h2,
+#practiceAreas h2,
+#practice h2,
+#contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .about-content {
     display: flex;
     flex-direction: column;
@@ -212,7 +227,7 @@ textarea {
 
 textarea {
     height: 150px;
-    resize: vertical;
+    resize: none;
 }
 
 button {
@@ -227,6 +242,19 @@ button {
 
 button:hover {
     background: var(--primary-color);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 footer {
