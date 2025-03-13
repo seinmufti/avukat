@@ -41,8 +41,17 @@ nav {
 
 .logo {
     color: var(--light-color);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    /* Add this new ruleset for logo images */
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 
 .nav-links a {
