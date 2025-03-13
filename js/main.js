@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize language
+    let currentLang = 'en';
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -29,58 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Language switching functionality
-    let currentLang = 'en';
-    let savedTexts = {};
+    function updateLanguage() {
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            element.textContent = translations[currentLang][key];
+        });
 
-    document.getElementById('langToggle').addEventListener('click', function (e) {
-        e.preventDefault();
+        const placeholders = document.querySelectorAll('[data-translate-placeholder]');
+        placeholders.forEach(element => {
+            const key = element.getAttribute('data-translate-placeholder');
+            element.placeholder = translations[currentLang][key];
+            // Add direction for phone input
+            if (key === 'phoneInput') {
+                element.style.direction = currentLang === 'ar' ? 'rtl' : 'ltr';
+                element.style.textAlign = currentLang === 'ar' ? 'right' : 'left';
+            }
+        });
 
-        // Switch language
-        currentLang = currentLang === 'en' ? 'ar' : 'en';
-        document.documentElement.lang = currentLang;
+        // Update HTML direction for RTL support
         document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = currentLang;
+    }
 
-        try {
-            // Update all elements with data-translate attribute
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                const currentText = element.textContent.trim().replace(/\s+/g, ' ');
-
-                if (!savedTexts[key]) {
-                    savedTexts[key] = {
-                        en: currentText,
-                        ar: translations[currentText]
-                    };
-                }
-
-                // Use the normalized text for lookup and translation
-                const translatedText = currentLang === 'ar' ? savedTexts[key].ar : savedTexts[key].en;
-                if (translatedText) {
-                    element.textContent = translatedText;
-                }
-            });
-
-            // Update all placeholders
-            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-translate-placeholder');
-                if (!savedTexts[key + '_placeholder']) {
-                    savedTexts[key + '_placeholder'] = {
-                        en: element.placeholder,
-                        ar: translations[element.placeholder]
-                    };
-                }
-                element.placeholder = currentLang === 'ar' ? savedTexts[key + '_placeholder'].ar : savedTexts[key + '_placeholder'].en;
-            });
-
-            // Form alert messages
-            const message = currentLang === 'ar' ? translations['Thank you for your message. We will get back to you soon!'] : 'Thank you for your message. We will get back to you soon!';
-            contactForm.onsubmit = (e) => {
-                e.preventDefault();
-                alert(message);
-                contactForm.reset();
-            };
-        } catch (error) {
-            console.error('Error during translation:', error);
-        }
+    document.getElementById('langToggle').addEventListener('click', (e) => {
+        e.preventDefault();
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        updateLanguage();
     });
+
+    // Initial translation
+    updateLanguage();
 });

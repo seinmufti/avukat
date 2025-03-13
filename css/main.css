@@ -310,10 +310,19 @@ footer {
     text-align: center;
 }
 
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+[dir="rtl"] .footer-social {
+    flex-direction: row-reverse;
+}
+
 .footer-social a {
     color: var(--light-color);
     font-size: 1.5rem;
-    margin: 0 0.5rem;
     transition: var(--transition);
 }
 
