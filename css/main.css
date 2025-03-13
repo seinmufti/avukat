@@ -34,17 +34,23 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 5%;
+    position: relative;
+    height: 70px;
 }
 
 .logo {
-    color: var(--light-color);
-    font-size: 1rem;
-    font-weight: bold;
+    position: absolute;
+    left: 5%;
     display: flex;
     align-items: center;
+}
+
+[dir="rtl"] .logo {
+    left: 5%;
+    right: auto;
 }
 
 .logo img {
@@ -57,24 +63,24 @@ nav {
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+    width: 600px;
 }
 
 .nav-links a {
     color: var(--light-color);
     text-decoration: none;
-    margin-left: 2rem;
     transition: var(--transition);
+    text-align: center;
+    width: 120px;
+    font-size: 16px;
 }
 
-/* RTL Support */
+/* Remove RTL-specific margin overrides */
 [dir="rtl"] .nav-links a {
-    margin-left: 0;
-    margin-right: 2rem;
-}
-
-[dir="rtl"] .lang-toggle i {
-    margin-right: 0;
-    margin-left: 5px;
+    margin: 0;
 }
 
 .nav-links a:hover {
@@ -159,38 +165,53 @@ section {
 }
 
 .about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    position: relative;
+    min-height: 400px;
     padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    /* Change from center to flex-start */
 }
 
 .about-text {
-    width: 100%;
+    flex: 1;
+    padding-top: 1rem;
+    /* Add some top padding for better alignment */
 }
 
 .about-image {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    flex: 0 0 400px;
 }
 
-/* Desktop layout */
-@media screen and (min-width: 768px) {
-    .about-content {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-    }
+/* RTL/LTR support */
+[dir="ltr"] .about-content {
+    flex-direction: row;
+}
 
-    .about-text {
-        flex: 1;
-        margin-left: 2rem;
+[dir="rtl"] .about-content {
+    flex-direction: row-reverse;
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column !important;
+        /* Override RTL/LTR directions */
+        min-height: auto;
+        padding: 1rem;
     }
 
     .about-image {
         flex: 0 0 auto;
-        margin: 0;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        width: 100%;
+        padding-top: 2rem;
     }
 }
 
@@ -301,12 +322,23 @@ footer {
 }
 
 .lang-toggle {
+    position: fixed;
+    right: 5%;
     padding: 5px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    margin-left: 15px;
+    z-index: 1001;
+    color: var(--light-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    direction: ltr;
+    /* Force LTR for icon placement */
 }
 
 .lang-toggle i {
-    margin-right: 5px;
+    margin-left: 5px;
 }
