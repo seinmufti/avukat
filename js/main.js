@@ -4,12 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.lang = 'en';
     document.documentElement.dir = 'ltr';
 
-    // Mobile menu toggle
+    // Update Burger menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
+    menuToggle.innerHTML = '<span></span><span></span><span></span>';
+
     menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
     });
 
     // Smooth scrolling for navigation links
@@ -20,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             target.scrollIntoView({
                 behavior: 'smooth'
             });
-            navLinks.classList.remove('active');
         });
     });
 
@@ -61,7 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.addEventListener('click', (e) => {
             e.preventDefault();
             currentLang = currentLang === 'en' ? 'ar' : 'en';
+            navLinks.classList.add('active'); // Keep menu open
             updateLanguage();
+        });
+    });
+
+    // Close menu when clicking navigation links (except language toggle)
+    navLinks.querySelectorAll('a:not(.lang-toggle)').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
         });
     });
 
