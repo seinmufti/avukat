@@ -33,6 +33,17 @@
         /* Updated text color */
     }
 
+    .lang-toggle.desktop-lang {
+        display: none;
+    }
+
+    .lang-toggle.mobile-lang {
+        display: flex;
+        margin: 10px 0;
+        position: relative;
+        justify-content: center;
+    }
+
     .menu-toggle {
         display: block;
     }

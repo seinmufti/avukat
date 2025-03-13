@@ -57,10 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = currentLang;
     }
 
-    document.getElementById('langToggle').addEventListener('click', (e) => {
-        e.preventDefault();
-        currentLang = currentLang === 'en' ? 'ar' : 'en';
-        updateLanguage();
+    document.querySelectorAll('.lang-toggle').forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage();
+        });
     });
 
     // Initial translation

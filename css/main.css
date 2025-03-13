@@ -92,6 +92,8 @@ nav {
     color: var(--light-color);
     font-size: 1.5rem;
     cursor: pointer;
+    position: absolute;
+    right: 5%;
 }
 
 .hero {
@@ -350,4 +352,15 @@ footer {
 
 .lang-toggle i {
     margin-left: 5px;
+}
+
+.lang-toggle.mobile-lang {
+    display: none;
+    position: relative;
+    right: auto;
+}
+
+.lang-toggle.desktop-lang {
+    position: fixed;
+    right: 5%;
 }
