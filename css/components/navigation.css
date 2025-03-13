@@ -11,8 +11,8 @@
     .nav-links {
         display: none;
     }
-    
-    .nav-links.active {
+
+    av-links.active {
         display: flex;
         flex-direction: column;
     }
