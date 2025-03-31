@@ -52,6 +52,13 @@
         font-size: 2rem;
     }
 
+    .hero {
+        height: calc(100vh - 400px);
+        /* Make hero section smaller on mobile */
+        min-height: 400px;
+        /* Ensure minimum height */
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
