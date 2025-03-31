@@ -49,6 +49,6 @@ const translations = {
         messageInput: "الرسالة",
         send: "إرسال",
         footerTitle: "محمد سعد الله - محامي",
-        location: "العزاق, أربيل، ٤٤٠٠١"
+        location: "العراق, أربيل، ٤٤٠٠١"
     }
 };
