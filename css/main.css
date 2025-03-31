@@ -111,7 +111,7 @@ nav {
 
 .hero {
     height: calc(100vh - 200px);
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://d1imjpjik7kc4g.cloudfront.net/images/5-Law-Firm-Titles-You-Should-Know-About-new.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero_cover.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
