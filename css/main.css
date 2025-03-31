@@ -17,10 +17,26 @@
     box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Playfair Display', serif;
     line-height: 1.6;
     color: var(--text-color);
+}
+
+/* Keep buttons and inputs with Playfair Display */
+button,
+input,
+textarea {
+    font-family: 'Playfair Display', serif;
 }
 
 /* Layout components */
@@ -84,6 +100,7 @@ nav {
 }
 
 .nav-links a {
+    font-family: 'Playfair Display', serif;
     color: var(--light-color);
     text-decoration: none;
     transition: var(--transition);
@@ -145,6 +162,7 @@ nav {
 }
 
 .cta-button {
+    font-family: 'Playfair Display', serif;
     display: inline-block;
     padding: 1rem 2rem;
     background: var(--accent-color);
@@ -268,6 +286,7 @@ form {
 
 input,
 textarea {
+    font-family: 'Playfair Display', serif;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -279,6 +298,7 @@ textarea {
 }
 
 button {
+    font-family: 'Playfair Display', serif;
     padding: 1rem;
     background: var(--accent-color);
     color: var(--light-color);
