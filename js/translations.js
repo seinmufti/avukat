@@ -23,8 +23,7 @@ const translations = {
         messageInput: "Message",
         send: "Send Message",
         footerTitle: "Muhammad Saadallah - Lawyer",
-        address: "40m, Gullan Towers",
-        location: "Erbil, ERB 44001"
+        location: "Iraq, Erbil 44001"
     },
     ar: {
         home: "الرئيسية",
@@ -50,7 +49,6 @@ const translations = {
         messageInput: "الرسالة",
         send: "إرسال",
         footerTitle: "محمد سعد الله - محامي",
-        address: "٤٠م، أبراج گولان",
-        location: "أربيل، ٤٤٠٠١"
+        location: "العزاق, أربيل، ٤٤٠٠١"
     }
 };
