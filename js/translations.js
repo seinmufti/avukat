@@ -48,7 +48,7 @@ const translations = {
         phoneInput: "رقم الهاتف",
         messageInput: "الرسالة",
         send: "إرسال",
-        footerTitle: "محمد سعد الله - محامي",
+        footerTitle: "محمد سعد الله - المحامي",
         location: "العراق, أربيل، ٤٤٠٠١"
     }
 };
