@@ -1,5 +1,7 @@
 @import 'components/navigation.css';
 @import 'components/form.css';
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+/* Arabic font fallback if Zain is not available */
 
 :root {
     --primary-color: #333;
@@ -30,6 +32,24 @@ body {
     font-family: 'Playfair Display', serif;
     line-height: 1.6;
     color: var(--text-color);
+}
+
+/* RTL Font Settings */
+[dir="rtl"] body,
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] .nav-links a {
+    font-family: 'Zain', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+    font-family: 'Zain', 'Tajawal', sans-serif;
 }
 
 /* Keep buttons and inputs with Playfair Display */
